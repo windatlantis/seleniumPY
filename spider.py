@@ -6,6 +6,10 @@ import seleniumPY.baseconfig as base
 
 
 def getDriver():
+    """
+    获取驱动器
+    :return:
+    """
     option = webdriver.ChromeOptions()
     location = base.location
     if len(location) > 0:
@@ -15,10 +19,28 @@ def getDriver():
 
 
 def broswer_pack(company, callback, debug):
+    """
+    参数封装到dict
+    :param company:
+    :param callback:
+    :param debug:
+    :return:
+    """
     return broswer(company["url"], company["next_page_xpath"], company["content_xpath"], company["href_xpath"], company["type_xpath"], callback, debug)
 
 
 def broswer(url, next_page_xpath, content_xpath, href_xpath, type_xpath, callback, debug):
+    """
+    浏览页面获取数据
+    :param url:
+    :param next_page_xpath:
+    :param content_xpath:
+    :param href_xpath:
+    :param type_xpath:
+    :param callback:
+    :param debug:
+    :return:
+    """
     # 打开浏览器,到达指定网站
     driver = getDriver()
     driver.get(url)

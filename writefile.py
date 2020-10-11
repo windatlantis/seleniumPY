@@ -3,6 +3,13 @@ import xlwings as xl
 
 
 def writeExcel(job_names, job_hrefs, job_types):
+    """
+    写excel
+    :param job_names:
+    :param job_hrefs:
+    :param job_types:
+    :return:
+    """
     app = xl.App()
 
     wb = app.books.active

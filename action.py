@@ -3,6 +3,12 @@ import seleniumPY.writefile as wf
 
 
 def runTest(company, callback):
+    """
+    主方法
+    :param company:
+    :param callback:
+    :return:
+    """
     result = spider.broswer_pack(company, callback, False)
     wf.writeExcel(result[0], result[1], result[2])
 
